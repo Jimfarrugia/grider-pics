@@ -1,16 +1,18 @@
+import "./ImageList.css";
 import React from "react";
 
 const ImageList = props => {
-  const images =
-    props.images.length < 1
-      ? null
-      : props.images.map(image => (
-          <li key={image.id}>
-            <img src={image.urls.thumb} alt={image.alt_description} />
-          </li>
-        ));
+  const images = !props.images.length
+    ? null
+    : props.images.map(image => (
+        <img
+          key={image.id}
+          src={image.urls.thumb}
+          alt={image.alt_description}
+        />
+      ));
   return images ? (
-    <ul>{images}</ul>
+    <div className='image-list'>{images}</div>
   ) : (
     <p>
       <em>Images will show here.</em>
