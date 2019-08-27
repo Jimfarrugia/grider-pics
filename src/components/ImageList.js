@@ -1,12 +1,20 @@
-import React from 'react';
+import React from "react";
 
 const ImageList = props => {
-  const searchResults = props.searchResults;
-  const images = searchResults.length < 1 ? null : searchResults.map(image => 
-    <li key={image.id}>
-      <img src={image.url} alt={image.description} />
-    </li>
+  const images =
+    props.images.length < 1
+      ? null
+      : props.images.map(image => (
+          <li key={image.id}>
+            <img src={image.urls.thumb} alt={image.alt_description} />
+          </li>
+        ));
+  return images ? (
+    <ul>{images}</ul>
+  ) : (
+    <p>
+      <em>Images will show here.</em>
+    </p>
   );
-  return <ul>{images}</ul>;
-}
-export default ImageList
+};
+export default ImageList;
