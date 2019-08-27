@@ -7,7 +7,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log(process.env.REACT_APP_UNSPLASH_KEY);
     return (
       <div className="ui container" style={{ marginTop: 10 }}>
         <SearchBar onSubmit={this.onSearchSubmit} />
