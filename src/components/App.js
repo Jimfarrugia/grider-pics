@@ -26,13 +26,7 @@ export class App extends Component {
       });
       this.setState({searchResults: images});
     })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    })
-    .finally(function () {
-      // always executed
-    });
+    .catch(error => console.log(error));
   }
 
   render() {
